@@ -1,0 +1,83 @@
+<nav class="bg-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
+        <div class="text-white font-bold text-2xl">
+            <a href="/">
+                <img src="/images/logo.png" alt="Logo" class="h-20">
+            </a>
+        </div>
+
+        <ul class="hidden md:flex space-x-7 text-md font-medium text-primary">
+            <li>
+                <a href="#camino-inca" class="hover:text-olive transition">
+                    Camino Inca
+                </a>
+            </li>
+            <li>
+                <a href="#trekking" class="hover:text-olive transition">
+                    Trekking
+                </a>
+            </li>
+            <li>
+                <a href="#tours" class="hover:text-olive transition">
+                    Tours
+                </a>
+            </li>
+            <li>
+                <a href="#nosotros" class="hover:text-olive transition">
+                    Nosotros
+                </a>
+            </li>
+            <li>
+                <a href="#contacto" class="hover:text-olive transition">
+                    Contáctanos
+                </a>
+            </li>
+        </ul>
+
+        <button id="menu-button" class="md:hidden text-primary text-3xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden bg-gray-900">
+        <ul class="flex flex-col space-y-4 py-4 px-6 text-sm font-medium text-primary">
+            <li>
+                <a href="#camino-inca" class="hover:text-olive transition">
+                    Camino Inca
+                </a>
+            </li>
+            <li>
+                <a href="#trekking" class="hover:text-olive transition">
+                    Trekking
+                </a>
+            </li>
+            <li>
+                <a href="#tours" class="hover:text-olive transition">
+                    Tours
+                </a>
+            </li>
+            <li>
+                <a href="#nosotros" class="hover:text-olive transition">
+                    Nosotros
+                </a>
+            </li>
+            <li>
+                <a href="#contacto" class="hover:text-olive transition">
+                    Contacto
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
