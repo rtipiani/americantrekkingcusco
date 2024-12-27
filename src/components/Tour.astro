@@ -1,0 +1,132 @@
+---
+const tours = [
+    {
+        title: "TOUR A MACHU PICCHU",
+        days: "1D",
+        image: "/images/tours/machupicchu.png",
+        description: "El tour Camino del Inca 2 días ofrece una experiencia compacta de una de las rutas más icónicas de Perú, ideal para quienes no quieren perderse la magia y la aventura de este destino.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%202D*."
+    },
+    {
+        title: "TOUR A MACHU PICCHU",
+        days: "2D/1N",
+        image: "/images/tours/machupicchu2.png",
+        description: "El Camino del Inca 4 días es una caminata emblemática que recorre paisajes impresionantes, nubosos y sitios arqueológicos, brindando una inmersión profunda en el legado Inca.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%204D*."
+    },
+    {
+        title: "MACHU PICCHU + VALLE SAGRADO",
+        days: "2D/1N",
+        image: "/images/tours/vallesagrado.png",
+        description: "En nuestro tour a Machu Picchu, explorarás durante un día la majestuosa Ciudadela Inca, una maravilla mundial vayamos a descubrir su historia y sus secretos.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*TOUR%20A%20MACHU%20PICCHU%201D*."
+    },
+    {
+        title: "TOUR MONTAÑA DE COLORES",
+        days: "1D",
+        image: "/images/tours/montanadecolores.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR MONTAÑA DE COLORES",
+        days: "2D/1N",
+        image: "/images/tours/montanadecolores2.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR A PALCOYO",
+        days: "1D",
+        image: "/images/tours/palcoyo.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR A MONTAÑA PALLAY PUNCHU",
+        days: "1D",
+        image: "/images/tours/pallaypunchu.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "CITY TOUR CUSCO",
+        days: "MEDIO DÍA",
+        image: "/images/tours/citytourcusco.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR VALLE SAGRADO",
+        days: "1 DÍA",
+        image: "/images/tours/vallesagrado2.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR MARAS MORAY",
+        days: "1 DÍA",
+        image: "/images/tours/marasmoray.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR LAGUNA HUMANTAY",
+        days: "1 DÍA",
+        image: "/images/tours/humantay.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR SINGRENACOCHA",
+        days: "1 DÍA",
+        image: "/images/tours/singrenacocha.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR TIPON PIKILLACTA ANDAHUAYLILLAS",
+        days: "HALF DAY",
+        image: "/images/tours/tipon.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR CAÑON CHONTA CONDOR",
+        days: "1 DÍA",
+        image: "/images/tours/chontacondor.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    },
+    {
+        title: "TOUR WAQRAPUKARA",
+        days: "1 DÍA",
+        image: "/images/tours/waqrapukara.png",
+        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
+    }
+];
+---
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-5xl sm:text-5xl lg:text-5xl font-bold text-primary mb-12 px-4 sm:px-8 font-cookies">
+            Aventúrate <br /> con nuestros tours.
+        </h2>
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {tours.map((tour) => (
+            <div class="bg-sand bg-opacity-50 rounded-lg shadow-md overflow-hidden">
+                <img src={tour.image} alt={tour.title} class="w-full h-64 object-cover"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">{tour.title}</h3>
+                    <p class="text-gray-600 mb-2">{tour.days}</p>
+                    <p class="text-gray-600 mb-6">{tour.description}</p>
+                    <a href={tour.link} target="_blank" class="inline-flex items-center px-6 py-2 bg-primary text-white rounded-md shadow-md transition duration-400 ease-in-out hover:scale-105">
+                        Reservar Ahora
+                        <i class="fab fa-whatsapp ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            ))}
+        </div>
+    </div>
+</section>
