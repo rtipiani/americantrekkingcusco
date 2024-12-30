@@ -2,57 +2,57 @@
 const tours = [
     {
         title: "CAMINO DEL INCA",
-        days: "2 DÍAS",
-        image: "/images/caminoinca2.png",
+        days: "2D/1N",
+        image: "/images/caminoinca2.avif",
         description: "El tour Camino del Inca 2 días ofrece una experiencia compacta de una de las rutas más icónicas de Perú, ideal para quienes no quieren perderse la magia y la aventura de este destino.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%202D*."
     },
     {
         title: "CAMINO DEL INCA",
-        days: "4 DÍAS",
-        image: "/images/caminoinca4.png",
+        days: "4D/3N",
+        image: "/images/caminoinca4.avif",
         description: "El Camino del Inca 4 días es una caminata emblemática que recorre paisajes impresionantes, nubosos y sitios arqueológicos, brindando una inmersión profunda en el legado Inca.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%204D*."
     },
     {
         title: "TOUR A MACHU PICCHU",
         days: "1 DÍA",
-        image: "/images/machupicchutour.png",
+        image: "/images/machupicchutour.avif",
         description: "En nuestro tour a Machu Picchu, explorarás durante un día la majestuosa Ciudadela Inca, una maravilla mundial vayamos a descubrir su historia y sus secretos.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*TOUR%20A%20MACHU%20PICCHU%201D*."
     },
     {
         title: "MONTAÑA DE COLORES",
         days: "1 DÍA",
-        image: "/images/montanadecolores.png",
+        image: "/images/montanadecolores.avif",
         description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     },
     {
         title: "MONTAÑA DE COLORES",
-        days: "2 DÍAS",
-        image: "/images/montanadecolores2d.png",
+        days: "2D/1N",
+        image: "/images/montanadecolores2d.avif",
         description: "Esta aventura de 2 días se ha convertido en una de las principales elecciones turísticas, aventúrate con viajeros de todo el mundo.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     },
     {
         title: "TOUR 7 LAGUNAS AUSANGATE",
         days: "1 DÍA",
-        image: "/images/ausangate1.png",
+        image: "/images/ausangate1.avif",
         description: "Una hermosa caminata, donde se puede visitar hermosas lagunas de color verde turquesa, y estar cerca de Ausangate y Ayangate.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     },
     {
         title: "TREKKING AUSANGATE",
-        days: "4 DÍAS",
-        image: "/images/ausangate.png",
+        days: "4D/3N",
+        image: "/images/ausangate.avif",
         description: "El Nevado de Ausangate, imponente y legendario, se alza en el corazón de la cordillera andina, ofreciendo paisajes únicos y una conexión íntima con la naturaleza.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     },
     {
         title: "TREKKING LARES",
-        days: "4 DÍAS",
-        image: "/images/ausangate2.png",
+        days: "4D/3N",
+        image: "/images/ausangate2.avif",
         description: "Durante el recorrido, tendrá la oportunidad de visitar pintorescos pueblos andinos y sumergirse en la riqueza cultural y natural de esta maravillosa región.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     }
@@ -60,16 +60,16 @@ const tours = [
 ---
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-5xl sm:text-5xl lg:text-5xl font-bold text-primary mb-12 px-4 sm:px-8 font-cookies">
-            Aventuras <br /> que no te puedes perder.
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12 px-4 sm:px-8">
+            Aventuras <br /> recomendadas por nuestros guías.
         </h2>
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {tours.map((tour) => (
-            <div class="bg-sand bg-opacity-50 rounded-lg shadow-md overflow-hidden">
+            <div class="bg-sand bg-opacity-10 rounded-lg shadow-md overflow-hidden">
                 <img src={tour.image} alt={tour.title} class="w-full h-64 object-cover"/>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-primary mb-2">{tour.title}</h3>
-                    <p class="text-gray-600 mb-2">{tour.days}</p>
+                    <h3 class="text-xl font-bold text-primary mb-2">{tour.title}</h3>
+                    <p class="text-gray-600 font-bold mb-2">{tour.days}</p>
                     <p class="text-gray-600 mb-6">{tour.description}</p>
                     <a href={tour.link} target="_blank" class="inline-flex items-center px-6 py-2 bg-primary text-white rounded-md shadow-md transition duration-400 ease-in-out hover:scale-105">
                         Consultar Ahora

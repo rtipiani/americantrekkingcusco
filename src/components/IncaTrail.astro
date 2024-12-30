@@ -3,29 +3,51 @@ const tours = [
     {
         title: "CAMINO DEL INCA",
         days: "2D/1N",
-        image: "/images/caminosdelinca/paquete2d.png",
-        description: "El tour Camino del Inca 2 días ofrece una experiencia compacta de una de las rutas más icónicas de Perú, ideal para quienes no quieren perderse la magia y la aventura de este destino.",
+        image: "/images/caminosdelinca/paquete2d.avif",
+        type: "Caminata / Cultural",
+        elevation: "2000 m – 2600 m",
+        difficulty: "Difícil",
+        description: "El tour de 2 días es perfecto para quienes tienen poco tiempo, ofreciendo paisajes de selva tropical, rica flora y fauna, visitas a los sitios arqueológicos Chachabamba y Wiñay Wayna, y una caminata de 10 km. Incluye dos visitas a Machu Picchu, permitiendo disfrutar del atardecer y amanecer para una experiencia inolvidable.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%202D*."
     },
     {
         title: "CAMINO DEL INCA",
         days: "3D/2N",
-        image: "/images/caminosdelinca/paquete3d.png",
-        description: "El Camino del Inca 4 días es una caminata emblemática que recorre paisajes impresionantes, nubosos y sitios arqueológicos, brindando una inmersión profunda en el legado Inca.",
+        image: "/images/caminosdelinca/paquete3d.avif",
+        type: "Caminata / Cultural",
+        elevation: "2000 m – 2600 m",
+        difficulty: "Moderado",
+        description: "El Camino Inca de 3 Días combina visitas al Camino Inca y el Valle Sagrado, ofreciendo paisajes espectaculares, flora y fauna diversa, y sitios arqueológicos como Wiñaywayna, Písac y Ollantaytambo. Con una caminata de 10 km, es ideal para principiantes, familias y quienes tienen poco tiempo.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*CAMINO%20DEL%20INCA%204D*."
     },
     {
         title: "CAMINO DEL INCA",
+        days: "4D/3N",
+        image: "/images/caminosdelinca/paquete4d.avif",
+        type: "Caminata / Cultural",
+        elevation: "2500 m – 4200 m",
+        difficulty: "Difícil",
+        description: "El Camino Inca de 4 días es la caminata más icónica y una de las más populares del mundo. Este recorrido atraviesa senderos originales, sitios arqueológicos y el paisaje del Parque Nacional de Machu Picchu. Ideal para una experiencia única combinando aventura, cultura e historia, haciendo de esta travesía un imprescindible.",
+        link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*TOUR%20A%20MACHU%20PICCHU%201D*."
+    },
+    {
+        title: "CAMINO DEL INCA",
         days: "5D/4N",
-        image: "/images/caminosdelinca/paquete5d.png",
-        description: "En nuestro tour a Machu Picchu, explorarás durante un día la majestuosa Ciudadela Inca, una maravilla mundial vayamos a descubrir su historia y sus secretos.",
+        image: "/images/caminosdelinca/paquete5d.avif",
+        type: "Caminata / Cultural",
+        elevation: "2500 m – 4200 m",
+        difficulty: "Difícil",
+        description: "El Camino Inca de 5 días y 4 noches sigue la misma ruta que la versión clásica de 4 días, pero a un ritmo más relajado. Diseñado para quienes buscan una experiencia más tranquila, este recorrido permite caminar con calma, disfrutar del paisaje y aclimatarse mejor a la altura, brindando comodidad y seguridad a lo largo de la travesía.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*TOUR%20A%20MACHU%20PICCHU%201D*."
     },
     {
         title: "CAMINO DEL INCA (SALKANTAY)",
         days: "7D/6N",
-        image: "/images/caminosdelinca/salkantay.png",
-        description: "La Montaña de Colores de Perú se ha convertido en una de las principales atracciones turísticas, atrayendo a viajeros de todo el mundo.",
+        image: "/images/caminosdelinca/salkantay.avif",
+        type: "Caminata / Cultural",
+        elevation: "2500 m – 4200 m",
+        difficulty: "Difícil",
+        description: "El Camino Inca de 7 días combina lo mejor de las dos caminatas más emblemáticas. Ofrece impresionantes vistas del glaciar Salkantay (6200 m / 20341 pies), Laguna de Humantay, tramos del Camino Inca y varios sitios arqueológicos en ruta hacia Machu Picchu. Una experiencia única para explorar paisajes, flora y fauna.",
         link: "https://wa.me/51918024860?text=¡Hola!%20*American%20Trekking*%20Estoy%20interesado%20en%20el%20paquete%20*MONTAÑA%20DE%20COLORES%201D*."
     }
 ];
@@ -37,12 +59,33 @@ const tours = [
         </h2>
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {tours.map((tour) => (
-            <div class="bg-sand bg-opacity-50 rounded-lg shadow-md overflow-hidden">
+            <div class="bg-sand bg-opacity-10 rounded-lg shadow-md overflow-hidden">
                 <img src={tour.image} alt={tour.title} class="w-full h-64 object-cover"/>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-primary mb-2">{tour.title}</h3>
-                    <p class="text-gray-600 mb-2">{tour.days}</p>
-                    <p class="text-gray-600 mb-6">{tour.description}</p>
+                    <h3 class="text-xl font-bold text-primary mb-2">
+                        {tour.title}
+                    </h3>
+                    <p class="text-gray-600 font-bold mb-2">
+                        {tour.days}
+                    </p>
+                    <div class="text-sm text-gray-500 mb-4 space-y-1">
+                        <p>
+                            <i class="fas fa-hiking text-primary mr-2"></i>
+                            <span class="font-bold">TIPO DE TOUR:</span> {tour.type}
+                        </p>
+                        <p>
+                            <i class="fas fa-mountain text-primary mr-2"></i>
+                            <span class="font-bold">ELEVACIÓN:</span> {tour.elevation}
+                        </p>
+                        <p>
+                            <i class="fas fa-tachometer-alt text-primary mr-2"></i>
+                            <span class="font-bold">DIFICULTAD:</span> {tour.difficulty}
+                        </p>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        {tour.description}
+                    </p>
+                    
                     <a href={tour.link} target="_blank" class="inline-flex items-center px-6 py-2 bg-primary text-white rounded-md shadow-md transition duration-400 ease-in-out hover:scale-105">
                         Reservar Ahora
                         <i class="fab fa-whatsapp ml-1"></i>
