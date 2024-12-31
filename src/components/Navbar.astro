@@ -1,70 +1,70 @@
-<nav class="bg-white py-4">
+<nav class="bg-white py-4 relative z-10">
     <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
-        <div class="text-white font-bold text-2xl">
-            <a href="/">
-                <img src="/images/logo.avif" alt="Logo" class="h-20">
+        <div>
+            <a href="/" title="Inicio - American Trekking Cusco">
+                <img src="/images/logoamericantrekking.avif" alt="Logo American Trekking" class="h-20">
             </a>
         </div>
 
-        <ul class="hidden md:flex space-x-7 text-md font-medium text-primary">
+        <ul class="hidden md:flex space-x-7 text-md font-medium text-accentBlack">
             <li>
-                <a href="../paquetes/incatrail" class="hover:text-olive transition">
+                <a href="../paquetes/incatrail" class="hover:text-olive transition" title="Explora el Camino Inca a Machu Picchu">
                     Camino Inca
                 </a>
             </li>
             <li>
-                <a href="../paquetes/trekking" class="hover:text-olive transition">
+                <a href="../paquetes/trekking" class="hover:text-olive transition" title="Descubre nuestras rutas de trekking en Perú">
                     Trekking
                 </a>
             </li>
             <li>
-                <a href="../paquetes/tours" class="hover:text-olive transition">
+                <a href="../paquetes/tours" class="hover:text-olive transition" title="Encuentra los mejores tours en Perú">
                     Tours
                 </a>
             </li>
             <li>
-                <a href="../paquetes/abouts" class="hover:text-olive transition">
+                <a href="../paquetes/abouts" class="hover:text-olive transition" title="Conoce más sobre nuestra empresa y equipo">
                     Nosotros
                 </a>
             </li>
             <li>
-                <a href="../paquetes/contacts" class="hover:text-olive transition">
+                <a href="../paquetes/contacts" class="hover:text-olive transition" title="Contáctanos para más información y reservas">
                     Contáctanos
                 </a>
             </li>
         </ul>
 
-        <button id="menu-button" class="md:hidden text-primary text-3xl" 
+        <button id="menu-button" class="md:hidden text-accentBlack text-3xl" 
         aria-label="Abrir menú de navegación">
             <i class="fas fa-bars"></i>
         </button>
 
     </div>
 
-    <div id="mobile-menu" class="hidden bg-primary">
-        <ul class="flex flex-col space-y-4 py-6 px-6 text-sm text-center font-medium text-sand">
+    <div id="mobile-menu" class="hidden transform origin-top scale-y-0 transition-transform duration-300 bg-primary absolute top-full left-0 w-full">
+        <ul class="flex flex-col space-y-4 py-6 px-6 text-md text-center font-medium text-white">
             <li>
-                <a href="../paquetes/incatrail" class="hover:text-olive transition">
+                <a href="../paquetes/incatrail" class="hover:text-olive transition" title="Explora el Camino Inca a Machu Picchu">
                     Camino Inca
                 </a>
             </li>
             <li>
-                <a href="../paquetes/trekking" class="hover:text-olive transition">
+                <a href="../paquetes/trekking" class="hover:text-olive transition" title="Descubre nuestras rutas de trekking en Perú">
                     Trekking
                 </a>
             </li>
             <li>
-                <a href="../paquetes/tours" class="hover:text-olive transition">
+                <a href="../paquetes/tours" class="hover:text-olive transition" title="Encuentra los mejores tours en Perú">
                     Tours
                 </a>
             </li>
             <li>
-                <a href="../paquetes/abouts" class="hover:text-olive transition">
+                <a href="../paquetes/abouts" class="hover:text-olive transition" title="Conoce más sobre nuestra empresa y equipo">
                     Nosotros
                 </a>
             </li>
             <li>
-                <a href="../paquetes/contacts" class="hover:text-olive transition">
+                <a href="../paquetes/contacts" class="hover:text-olive transition" title="Contáctanos para más información y reservas">
                     Contacto
                 </a>
             </li>
@@ -78,7 +78,14 @@
 
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden', 'scale-y-0');
+                    mobileMenu.classList.add('scale-y-100');
+                } else {
+                    mobileMenu.classList.add('scale-y-0');
+                    mobileMenu.classList.remove('scale-y-100');
+                    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                }
             });
         }
     });
