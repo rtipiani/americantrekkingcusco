@@ -9,7 +9,8 @@ export default {
 				accentYellow: '#FFC107',
 				accentBlue: '#00BFFF',
 				olive: '#6A9F65',
-				sand: '#D3B88C'
+				sand: '#D3B88C',
+				accentBlack: '#222222'
 			}
 		},
 	},
