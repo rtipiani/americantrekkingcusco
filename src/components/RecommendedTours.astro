@@ -66,7 +66,7 @@ const tours = [
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {tours.map((tour) => (
             <div class="bg-sand bg-opacity-10 rounded-lg shadow-md overflow-hidden">
-                <img src={tour.image} alt={tour.title} class="w-full h-64 object-cover"/>
+                <img src={tour.image} alt={`Imagen representativa del tour ${tour.title}`} class="w-full h-64 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary mb-2">{tour.title}</h3>
                     <p class="text-gray-600 font-bold mb-2">{tour.days}</p>
