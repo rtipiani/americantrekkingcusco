@@ -9,28 +9,35 @@ import '../styles/global.css';
 <!doctype html>
 <html lang="es">
 	<head>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-			  	(function (w, d, s, l, i) {
-					w[l] = w[l] || [];
-					w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-					var f = d.getElementsByTagName(s)[0];
-					if (f && f.parentNode) {
-				  		var j = d.createElement(s) as HTMLScriptElement;
-				  		var dl = l !== 'dataLayer' ? '&l=' + l : '';
-				  		j.async = true;
-				  		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				  		f.parentNode.insertBefore(j, f);
-					}
-			  	})(window, document, 'script', 'dataLayer', 'G-GQCS08DM6X');
-			});
+		<script is:inline>
+			// Google Analytics
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+			  window.dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-GQCS08DM6X');
+		  
+			// Google Tag Manager
+			(function(w, d, s, l, i) {
+			  w[l] = w[l] || [];
+			  w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+			  var f = d.getElementsByTagName(s)[0];
+			  if (f && f.parentNode) {
+				var j = d.createElement(s);
+				var dl = l !== 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			  }
+			})(window, document, 'script', 'dataLayer', 'GTM-WTWP5VQ9');
 		</script>
 		<meta charset="UTF-8" />
 		<meta property="og:locale" content="es_PE" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Rubén Tipiani" />
-		<meta name="copyright" content="Copyright (c) 2024 American Trekking Cusco" />
+		<meta name="copyright" content="Copyright (c) 2025 American Trekking Cusco" />
 		<meta name="description" content={meta.description} />
 	
 		<title>{meta.title}</title>
@@ -38,7 +45,7 @@ import '../styles/global.css';
 		<meta property="og:site_name" content="American Trekking Cusco" />
 		<meta property="og:title" content={meta.title} />
 		<meta property="og:description" content={meta.description} />
-		<meta property="og:image" content="https://www.americantrekkingcusco.com/imagen_de_previsualizacion.webp" />
+		<meta property="og:image" content="https://www.americantrekkingcusco.com/imagen_de_previsualizacion.avif" />
 		<meta property="og:url" content={meta.url} />
 		<meta property="og:type" content="website" />
 		<meta property="og:image:width" content="1200" />
@@ -54,17 +61,10 @@ import '../styles/global.css';
 		<meta name="twitter:title" content={meta.title} />
 		<meta name="twitter:description" content={meta.description} />
 		<meta name="twitter:image" content="https://www.americantrekkingcusco.com/imagen_de_previsualizacion.webp" />
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQCS08DM6X"></script>
-		<script is:inline>
-			if (typeof window !== 'undefined') {
-				window.dataLayer = window.dataLayer || [];
-				function gtag() {
-					window.dataLayer.push(arguments);
-				}
-				gtag('js', new Date());
-				gtag('config', 'G-GQCS08DM6X');
-			}
-		</script>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 	</head>
 	<body>
 		<slot />
@@ -75,5 +75,9 @@ import '../styles/global.css';
 		<a href="#top" class="fixed bottom-24 right-8 z-50 p-3 bg-primary text-white rounded-full shadow-xl hover:bg-secondary transition duration-300" aria-label="Ir al inicio de la página">
 			<i class="fa-solid fa-arrow-up text-xl"></i>
 		</a>
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTWP5VQ9"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
 	</body>
 </html>
