@@ -25,9 +25,9 @@ const slides = [
 ---
 <div class="relative w-full h-screen overflow-hidden">
     <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
-        {slides.map((slide, index) => (
+        {slides.map((slide) => (
             <div class="relative flex-shrink-0 w-full h-full">
-                <img src={slide.src} alt={slide.alt} class="w-full h-full object-cover" loading={index === 0 ? "eager" : "lazy"} />
+                <img src={slide.src} alt={slide.alt} class="w-full h-full object-cover" />
 
                 <div class="absolute inset-0 bg-black bg-opacity-45 flex flex-col justify-center items-center text-center px-4 md:px-8 lg:px-12 text-white">
                     <p class="text-3xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-7xl font-extrabold leading-tight tracking-wide mb-4 font-winters">
@@ -82,6 +82,14 @@ const slides = [
 
         let currentSlide = 0;
 
+        // Configuración inicial del atributo `loading` para las imágenes.
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector("img");
+            if (img) {
+                img.setAttribute("loading", index === 0 ? "eager" : "lazy");
+            }
+        });
+
         const updateSlider = () => {
             if (currentSlide >= slides.length || currentSlide < 0) {
                 return;
@@ -120,7 +128,7 @@ const slides = [
             });
         });
 
-        if ('requestIdleCallback' in window) {
+        if ("requestIdleCallback" in window) {
             requestIdleCallback(() => {
                 setInterval(() => {
                     currentSlide = (currentSlide + 1) % slides.length;
