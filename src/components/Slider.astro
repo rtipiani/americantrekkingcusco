@@ -23,7 +23,7 @@ const slides = [
     }
 ];
 ---
-<div class="relative w-full h-screen overflow-hidden">
+<section class="relative w-full h-screen overflow-hidden">
     <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
         {slides.map((slide) => (
             <div class="relative flex-shrink-0 w-full h-full">
@@ -36,7 +36,13 @@ const slides = [
                     <p class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 max-w-[90%] lg:max-w-[70%] font-dots">
                         {slide.description}
                     </p>
-                    <a href={slide.whatsappLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-sand text-accentBlack px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-bold border-white border-2 hover:scale-105 transition" aria-label="Consultar ahora vía WhatsApp">
+                    <a 
+                        href={slide.whatsappLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="inline-flex items-center bg-sand text-accentBlack px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-bold border-white border-2 hover:scale-105 transition"
+                        aria-label={`Consultar sobre ${slide.title} vía WhatsApp`}
+                    >
                         Consultar ahora
                         <i class="fa-brands fa-whatsapp text-lg ml-1"></i>
                     </a>
@@ -61,7 +67,7 @@ const slides = [
             ></button>
         ))}
     </div>
-</div>
+</section>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
