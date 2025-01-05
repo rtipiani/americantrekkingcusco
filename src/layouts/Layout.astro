@@ -42,7 +42,7 @@ import '../styles/global.css';
 		<link rel="icon" type="image/avif" sizes="16x16" href="/favicon-16x16.avif">
 		<link rel="manifest" href="/site.webmanifest">
 
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQCS08DM6X"></script>
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQCS08DM6X"></script>
 		<script is:inline>
 			// Google Analytics
 			window.dataLayer = window.dataLayer || [];
@@ -65,6 +65,32 @@ import '../styles/global.css';
 				f.parentNode.insertBefore(j, f);
 			  }
 			})(window, document, 'script', 'dataLayer', 'GTM-WTWP5VQ9');
+		</script> -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQCS08DM6X"></script>
+		<script defer>
+		// Google Analytics
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			window.dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-GQCS08DM6X');
+		</script>
+
+		<!-- Google Tag Manager de manera diferida -->
+		<script defer>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+			var f = d.getElementsByTagName(s)[0];
+			if (f && f.parentNode) {
+			var j = d.createElement(s);
+			var dl = l !== 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+			}
+		})(window, document, 'script', 'dataLayer', 'GTM-WTWP5VQ9');
 		</script>
 	</head>
 	<body>
