@@ -68,7 +68,7 @@ const tours = [
             <div class="bg-sand bg-opacity-10 rounded-lg shadow-md overflow-hidden">
                 <img
                     srcset={`${tour.image}?w=400 400w, ${tour.image}?w=768 768w, ${tour.image}?w=1024 1024w`}
-                    sizes="(max-width: 768px) 100vw, 768px"
+                    sizes="(max-width: 640px) 100vw, (min-width: 641px) and (max-width: 1024px) 50vw, 33vw"
                     src={tour.image}
                     alt={tour.title}
                     class="w-full h-64 object-cover"
