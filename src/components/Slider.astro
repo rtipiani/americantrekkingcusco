@@ -61,10 +61,7 @@ const slides = [
 
     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, i) => (
-            <button
-                class={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 ${i === 0 ? "bg-white" : "bg-white opacity-85"}`}
-                aria-label={`Ir al slider ${i + 1}`}
-            ></button>
+            <button data-index={i} class={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 ${i === 0 ? "bg-white" : "bg-sand opacity-85"}`} aria-label={`Ir al slider ${i + 1}`}/>
         ))}
     </div>
 </section>
@@ -87,11 +84,120 @@ const slides = [
         }
 
         let currentSlide = 0;
+        let autoSlideInterval: NodeJS.Timeout;
+
+        // Función para iniciar el deslizamiento automático
+        const startAutoSlide = () => {
+            autoSlideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlider();
+            }, 5000);
+        };
+
+        // Función para detener el deslizamiento automático
+        const stopAutoSlide = () => {
+            clearInterval(autoSlideInterval);
+        };
 
         // Configuración inicial del atributo `loading` para las imágenes.
         slides.forEach((slide, index) => {
             const img = slide.querySelector("img");
             if (img) {
+                img.setAttribute("loading", index === 0 ? "eager" : "lazy");
+            }
+        });
+
+        const updateSlider = () => {
+            if (currentSlide >= slides.length || currentSlide < 0) {
+                return;
+            }
+
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            indicators.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add("bg-white");
+                    dot.classList.remove("bg-sand", "opacity-85");
+                } else {
+                    dot.classList.add("bg-sand", "opacity-85");
+                    dot.classList.remove("bg-white");
+                }
+            });
+        };
+
+        // Manejo de clic en botones Prev y Next
+        prevBtn.addEventListener("click", () => {
+            stopAutoSlide(); // Pausar el deslizamiento automático
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+            startAutoSlide(); // Reiniciar el deslizamiento automático
+        });
+
+        nextBtn.addEventListener("click", () => {
+            stopAutoSlide(); // Pausar el deslizamiento automático
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+            startAutoSlide(); // Reiniciar el deslizamiento automático
+        });
+
+        // Manejo de clic en indicadores
+        indicators.forEach((dot) => {
+            let isTransitioning = false;
+            dot.addEventListener("click", () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+
+                const index = dot.getAttribute("data-index");
+                if (index !== null) {
+                    stopAutoSlide(); // Pausar el deslizamiento automático
+                    currentSlide = parseInt(index);
+                    updateSlider();
+                    startAutoSlide(); // Reiniciar el deslizamiento automático
+                }
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 700); // Duración de la animación
+            });
+        });
+
+        // Recalcular posición del slider al cambiar el tamaño de la ventana
+        window.addEventListener("resize", () => {
+            slider.style.transition = "none"; // Desactivar transición
+            updateSlider();
+            setTimeout(() => slider.style.transition = "", 0); // Reactivar transición
+        });
+
+        // Iniciar el deslizamiento automático
+        startAutoSlide();
+
+        updateSlider(); // Configuración inicial del slider
+    });
+</script>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.getElementById("slider");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const indicators = Array.from(document.querySelectorAll("[data-index]"));
+
+        if (!slider || !prevBtn || !nextBtn) {
+            return;
+        }
+
+        const slides = Array.from(slider.children);
+
+        if (slides.length === 0) {
+            return;
+        }
+
+        let currentSlide = 0;
+
+        // Configuración inicial del atributo `loading` para las imágenes.
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector("img");
+            if (img && img.complete) {
                 img.setAttribute("loading", index === 0 ? "eager" : "lazy");
             }
         });
@@ -125,13 +231,27 @@ const slides = [
         });
 
         indicators.forEach((dot) => {
+            let isTransitioning = false; 
             dot.addEventListener("click", () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+
                 const index = dot.getAttribute("data-index");
                 if (index !== null) {
                     currentSlide = parseInt(index);
                     updateSlider();
                 }
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 700);
             });
+        });
+
+        window.addEventListener("resize", () => {
+            slider.style.transition = "none";
+            updateSlider();
+            setTimeout(() => slider.style.transition = "", 0);
         });
 
         if ("requestIdleCallback" in window) {
@@ -150,4 +270,4 @@ const slides = [
 
         updateSlider();
     });
-</script>
+</script> -->
