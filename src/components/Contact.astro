@@ -89,27 +89,25 @@
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script type="text/javascript">
-    emailjs.init("iJ6VpWiG6fuT07MjZ");  // Asegúrate de reemplazar con tu clave pública de EmailJS
+    emailjs.init("iJ6VpWiG6fuT07MjZ");
 
     const form = document.getElementById('contact-form');
     
     form.addEventListener('submit', function(e) {
-        e.preventDefault();  // Previene la recarga de la página al enviar el formulario
+        e.preventDefault();
         
-        const recaptchaResponse = grecaptcha.getResponse(); // Obtener la respuesta del reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse();
         if (recaptchaResponse.length === 0) {
             alert("Por favor verifica que no eres un robot.");
             return;
         }
         
-        // Usar sendForm en lugar de FormData
         emailjs.sendForm('service_4036u5n', 'template_8r9gk48', form)
             .then(response => {
                 console.log("Mensaje enviado exitosamente", response);
                 alert('Tu mensaje ha sido enviado con éxito');
                 
-                // Redirigir a la página de inicio después de la confirmación
-                window.location.href = '/';  // Reemplazar con la URL de tu página de inicio si es necesario
+                window.location.href = '/';
             })
             .catch(error => {
                 console.error("Error al enviar el mensaje", error);

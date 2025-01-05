@@ -86,7 +86,6 @@ const slides = [
         let currentSlide = 0;
         let autoSlideInterval: NodeJS.Timeout;
 
-        // Función para iniciar el deslizamiento automático
         const startAutoSlide = () => {
             autoSlideInterval = setInterval(() => {
                 currentSlide = (currentSlide + 1) % slides.length;
@@ -94,12 +93,10 @@ const slides = [
             }, 5000);
         };
 
-        // Función para detener el deslizamiento automático
         const stopAutoSlide = () => {
             clearInterval(autoSlideInterval);
         };
 
-        // Configuración inicial del atributo `loading` para las imágenes.
         slides.forEach((slide, index) => {
             const img = slide.querySelector("img");
             if (img) {
@@ -125,22 +122,20 @@ const slides = [
             });
         };
 
-        // Manejo de clic en botones Prev y Next
         prevBtn.addEventListener("click", () => {
-            stopAutoSlide(); // Pausar el deslizamiento automático
+            stopAutoSlide();
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             updateSlider();
-            startAutoSlide(); // Reiniciar el deslizamiento automático
+            startAutoSlide();
         });
 
         nextBtn.addEventListener("click", () => {
-            stopAutoSlide(); // Pausar el deslizamiento automático
+            stopAutoSlide();
             currentSlide = (currentSlide + 1) % slides.length;
             updateSlider();
-            startAutoSlide(); // Reiniciar el deslizamiento automático
+            startAutoSlide();
         });
 
-        // Manejo de clic en indicadores
         indicators.forEach((dot) => {
             let isTransitioning = false;
             dot.addEventListener("click", () => {
@@ -149,28 +144,26 @@ const slides = [
 
                 const index = dot.getAttribute("data-index");
                 if (index !== null) {
-                    stopAutoSlide(); // Pausar el deslizamiento automático
+                    stopAutoSlide();
                     currentSlide = parseInt(index);
                     updateSlider();
-                    startAutoSlide(); // Reiniciar el deslizamiento automático
+                    startAutoSlide();
                 }
 
                 setTimeout(() => {
                     isTransitioning = false;
-                }, 700); // Duración de la animación
+                }, 700);
             });
         });
 
-        // Recalcular posición del slider al cambiar el tamaño de la ventana
         window.addEventListener("resize", () => {
-            slider.style.transition = "none"; // Desactivar transición
+            slider.style.transition = "none";
             updateSlider();
-            setTimeout(() => slider.style.transition = "", 0); // Reactivar transición
+            setTimeout(() => slider.style.transition = "", 0);
         });
 
-        // Iniciar el deslizamiento automático
         startAutoSlide();
 
-        updateSlider(); // Configuración inicial del slider
+        updateSlider();
     });
 </script>
