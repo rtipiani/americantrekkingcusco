@@ -92,7 +92,7 @@ const slides = [
         slides.forEach((slide, index) => {
             const img = slide.querySelector("img");
             if (img) {
-                img.setAttribute("loading", index === 1 ? "eager" : "lazy");
+                img.setAttribute("loading", index === 0 ? "eager" : "lazy");
             }
         });
 
